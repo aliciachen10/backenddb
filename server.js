@@ -26,7 +26,14 @@ const db = mysql.createConnection(
 // GET Route for homepage
 app.get('/api/movies', (req, res) =>
   db.query('SELECT * FROM movies', function (err, results) {
-    console.log(results);
+    res.json(results);
+  })
+);
+
+//add movies 
+app.get('/api/add-movie', (req, res) =>
+  db.query('SELECT * FROM movies', function (err, results) {
+    res.json(results);
   })
 );
 
